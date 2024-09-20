@@ -1,0 +1,19 @@
+html {
+    background-image: url('/src/Images/backgroundDesktop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 500px) {
+    html {
+        background-image: url('/src/Images/backgroundphone.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        scroll-behavior: smooth;
+    }
+}

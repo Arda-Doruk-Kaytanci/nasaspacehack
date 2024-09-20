@@ -1,0 +1,199 @@
+.contributers li:hover {
+    transform: scale(1.05);
+    color: aqua;
+}
+
+.link:hover {
+    transform: scale(1.05);
+}
+
+@media screen and (min-width: 501px) {
+    .logo {
+        border-radius: 50%;
+        width: 30lvw;
+        height: 45lvh;
+    }
+
+    .contributers {
+        position: relative;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        list-style: upper-roman;
+        list-style-position: inside;
+        color: aliceblue;
+        gap: 2vh;
+        align-items: center;
+    }
+
+    .contributers li {
+        width: 20vw;
+        padding: 10px;
+        background: none;
+        border-radius: 5%;
+        box-shadow: 1px 1px 2px 2px;
+    }
+
+    .contributers li:hover {
+        transform: scale(1.05);
+        color: aqua;
+    }
+
+    .link:hover {
+        transform: scale(1.05);
+    }
+
+    .footer-container {
+        display: grid;
+        height: 50vh;
+        grid-template-columns: 33.33vw 33.33vw 33.33vw;
+        grid-template-rows: 50vh;
+    }
+
+    #footer-link {
+        color: aliceblue;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 2vh;
+    }
+
+    .footer-grid-container {
+        width: 33.33vw;
+        text-align: center;
+        align-content: center;
+        height: 50vh;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-top: 2.5vh;
+        margin-bottom: 2.5vh;
+        color: rgb(101, 183, 255);
+    }
+
+    #contacts {
+        font-weight: 800;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .link {
+        font-size: 1.3rem;
+        width: 10vw;
+        height: 7.5vh;
+        padding: 10px;
+        background: none;
+        border-radius: 15%;
+        box-shadow: 1px 1px 2px 2px;
+    }
+
+    #goUp {
+        color: aliceblue;
+        font-weight: 700;
+        box-shadow: 1px 1px 2px 2px;
+        font-size: 1.3rem;
+        padding: 10x;
+        border-radius: 15%;
+        width: 10vw;
+        background: none;
+    }
+
+    #goUp:active {
+        color: grey;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer-container {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .logo {
+        margin-left: 7.5svw;
+        margin-right: 7.5svw;
+        margin-top: 5vh;
+        border-radius: 50%;
+        width: 85svw;
+        height: 30svh;
+    }
+
+    .contributers {
+        width: 35svw;
+        display: flex;
+        flex-direction: column;
+        list-style: upper-roman;
+        list-style-position: inside;
+        color: aliceblue;
+        gap: 2vh;
+        text-align: center;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+
+    .contributers li {
+        width: 30svw;
+        padding: 10px;
+        height: 3svh;
+        overflow: auto;
+        font-weight: 700;
+        background: none;
+        border-radius: 5%;
+        box-shadow: 1px 1px 2px 2px;
+    }
+
+
+    #footer-link {
+        color: aliceblue;
+        width: 35svw;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 2vh;
+        text-align: center;
+    }
+
+    .footer-grid-container {
+        align-items: center;
+        width: 82.5svw;
+        display: grid;
+        margin-left: 4.375svw;
+        margin-right: 4.375svw;
+        column-gap: 5vw;
+        grid-template-rows: 50svh;
+        grid-template-columns: 35svw 35svw;
+    }
+
+    #contacts {
+        text-align: center;
+        font-size: 1.4rem;
+        color: rgb(101, 183, 255);
+        font-weight: 800;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .link {
+        font-size: 1.3rem;
+        width: 30svw;
+        padding: 10px;
+        background: none;
+        border-radius: 15%;
+        box-shadow: 1px 1px 2px 2px;
+    }
+
+    #goUp {
+        color: aliceblue;
+        font-weight: 700;
+        box-shadow: 1px 1px 2px 2px;
+        font-size: 1.3rem;
+        padding: 10x;
+        border-radius: 15%;
+        background: none;
+        width: 30svw;
+        padding: 10px;
+    }
+
+    #goUp:active {
+        color: grey;
+    }
+
+}
