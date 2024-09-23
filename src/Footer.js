@@ -58,7 +58,10 @@ function Footer({ scrollRef }) {
                                 Arda Yazgan
                             </li>
                             <li>
-                                Tuğra Yeşil
+                                Hacı Hasan Ocak
+                            </li>
+                            <li>
+                                Furkan Kürtoğlu
                             </li>
                         </ol>
                     </div>
@@ -109,7 +112,10 @@ function Footer({ scrollRef }) {
                             Arda Yazgan
                         </li>
                         <li>
-                            Tuğra Yeşil
+                            Hacı Hasan Ocak
+                        </li>
+                        <li>
+                            Furkan Kürtoğlu
                         </li>
                     </ol>
                 </div>

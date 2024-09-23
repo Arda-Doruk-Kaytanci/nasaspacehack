@@ -1,7 +1,7 @@
 
 import './CssFiles/App.css';
 import React, { useRef } from 'react';
-import StarsList from './StarsList';
+import Homepage from './Homepage';
 import NavBar from './Navbar';
 import Footer from './Footer';
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <NavBar ref={navRef}></NavBar>
-      <StarsList></StarsList>
+      <Homepage></Homepage>
       <Footer scrollRef={navRef}></Footer>
     </div>
   );

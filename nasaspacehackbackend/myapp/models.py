@@ -34,3 +34,12 @@ class PlanetItems(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class SelectedItem(models.Model):
+    planet = models.ForeignKey(
+        PlanetItems, on_delete=models.PROTECT, blank=True, null=True
+    )
+
+    def __str__(self) -> str:
+        return self.planet

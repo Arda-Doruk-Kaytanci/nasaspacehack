@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import StarCategory, StarItems, PlanetCategory, PlanetItems
+from .models import StarCategory, StarItems, PlanetCategory, PlanetItems, SelectedItem
 
 
 class PlanetCategorySerializer(serializers.ModelSerializer):
@@ -43,3 +43,9 @@ class StarSerializer(serializers.ModelSerializer):
             "id",
             "category_id",
         ]
+
+
+class SelectedItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SelectedItem
+        fields = ["title", "id"]
