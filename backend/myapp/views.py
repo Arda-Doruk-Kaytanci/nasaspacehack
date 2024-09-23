@@ -1,11 +1,22 @@
 from rest_framework.pagination import PageNumberPagination
 from rest_framework import generics, filters
-from .models import PlanetItems, StarItems, PlanetCategory, StarCategory
+from .models import (
+    PlanetItems,
+    StarItems,
+    PlanetCategory,
+    StarCategory,
+    SystemCategory,
+    SystemModel,
+    SelectedItem,
+)
 from .serializers import (
     PlanetSerializer,
     StarSerializer,
     PlanetCategorySerializer,
     StarCategorySerializer,
+    SystemCategorySerializer,
+    SystemSerializer,
+    SelectedItemSerializer,
 )
 
 
@@ -57,3 +68,28 @@ class StarCategoryView(generics.ListAPIView):
     pagination_class = TenPerPagePagination
     filter_backends = [filters.SearchFilter]
     search_fields = ["title"]
+
+
+class SystemCategoryView(generics.ListAPIView):
+    queryset = SystemCategory.objects.all()
+    serializer_class = SystemCategorySerializer
+    pagination_class = TenPerPagePagination
+    search_fields = ["title"]
+
+
+class SystemView(generics.ListAPIView):
+    queryset = SystemModel.objects.all()
+    serializer_class = SystemSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ["name"]
+    pagination_class = TenPerPagePagination
+
+
+class PlanetSingleItem(generics.RetrieveAPIView):
+    queryset = SystemModel.objects.all()
+    serializer_class = SystemSerializer
+
+
+class SelectedItemView(generics.ListAPIView):
+    queryset = SelectedItem.objects.all()
+    serializer_class = SelectedItemSerializer

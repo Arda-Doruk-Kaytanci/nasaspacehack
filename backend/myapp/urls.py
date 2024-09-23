@@ -6,13 +6,26 @@ from .views import (
     StarsView,
     StarSingleItem,
     StarCategoryView,
+    SelectedItemView,
 )
 
 urlpatterns = [
-    path("planets/", PlanetsView.as_view(), name="planets-list-create"),
+    path("planets/", PlanetsView.as_view()),
     path(
         "planets/<int:pk>/",
         PlanetSingleItem.as_view(),
+    ),
+    path(
+        "systems/",
+        PlanetsView.as_view(),
+    ),
+    path(
+        "systems/<int:pk>/",
+        PlanetSingleItem.as_view(),
+    ),
+    path(
+        "selected-item/",
+        SelectedItemView.as_view(),
     ),
     path(
         "planet-categories/",
