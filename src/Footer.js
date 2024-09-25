@@ -2,16 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import logo from "./Images/nasaspacehacklogo.jpg"
 import './CssFiles/Footer.css'
-function Footer({ scrollRef }) {
+function Footer() {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
     const LinkButton = (props) => {
         const navigate = useNavigate();
         const location = useLocation();
         const onClickHandler = () => {
             navigate(props.link);
-            if (props.scrollRef?.current) {
-                props.scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
+            window.scrollTo(0, 0);
         }
         const isActive = location.pathname === `/${props.link}` || (location.pathname === '/' && props.link === "");
 
@@ -32,7 +30,7 @@ function Footer({ scrollRef }) {
         );
     }
     const goUp = () => {
-        scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        window.scrollTo(0, 0);
     }
     if (screenWidth <= 500) {
         return (
@@ -42,9 +40,9 @@ function Footer({ scrollRef }) {
                     <div className="footer-grid-container">
                         <ul id="footer-link">
                             Navigations
-                            <li><LinkButton name="Homepage" link="" scrollRef={scrollRef}></LinkButton></li>
-                            <li><LinkButton name="Tips" link="tips" scrollRef={scrollRef}></LinkButton></li>
-                            <li><LinkButton name="Tests" link="tests" scrollRef={scrollRef} ></LinkButton></li>
+                            <li><LinkButton name="Homepage" link="" ></LinkButton></li>
+                            <li><LinkButton name="Tips" link="tips" ></LinkButton></li>
+                            <li><LinkButton name="Tests" link="tests"  ></LinkButton></li>
                             <li><button type="button" onClick={goUp} id="goUp" className="link" >Go Up</button></li>
                         </ul>
                         <ol className="contributers">Contributers
@@ -82,9 +80,9 @@ function Footer({ scrollRef }) {
                 <div className="footer-grid-container">
                     <ul id="footer-link">
                         Navigations
-                        <li><LinkButton name="Homepage" link="" scrollRef={scrollRef}></LinkButton></li>
-                        <li><LinkButton name="Tips" link="tips" scrollRef={scrollRef}></LinkButton></li>
-                        <li><LinkButton name="Tests" link="tests" scrollRef={scrollRef} ></LinkButton></li>
+                        <li><LinkButton name="Homepage" link="" ></LinkButton></li>
+                        <li><LinkButton name="Tips" link="tips" ></LinkButton></li>
+                        <li><LinkButton name="Tests" link="tests"  ></LinkButton></li>
                         <li><button type="button" onClick={goUp} id="goUp" className="link" >Go Up</button></li>
                     </ul>
                 </div>

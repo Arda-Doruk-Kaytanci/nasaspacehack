@@ -6,7 +6,7 @@ function Homepage() {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState(null)
-    const fetchData = async (page = 1, query = '') => {
+    const fetchData = async () => {
         try {
             const response = await fetch(`http://127.0.0.1:8000/api/selected-item`, {
                 method: 'GET',
@@ -38,31 +38,69 @@ function Homepage() {
     }
     return (
         <div className="homepage-container">
-            <article className="homepage-article planet">
-                <p>
+            <article className="position-of-the-earth">
+                Position
+            </article>
 
+            <article className="homepage-article-missions">
+                Include First Succes first system they found first planet first star first blackhole
+            </article>
+
+            <article className="homepage-article-missions">
+
+            </article>
+
+            <article className="homepage-article-missions">
+
+            </article>
+
+            <section className="homepage-section liveable">
+                <p>
+                    {data[0].planet.summary}
                 </p>
-                <img className="homepage-article-image" />
+                <p>
+                    {data[0].planet.summary}
+                </p>
+            </section>
+            <section className="homepage-section multiple-star">
+                <p>
+                    {data[0].planet.summary}
+                </p>
+                <p>
+                    {data[0].planet.summary}
+                </p>
+            </section>
+            <section className="homepage-section lava">
+                <p>
+                    {data[0].planet.summary}
+                </p>
+                <p>
+                    {data[0].planet.summary}
+                </p>
+            </section>
+            <section className="homepage-section cotton-candy">
+                <p>
+                    {data[0].planet.summary}
+                </p>
+            </section>
+
+            <article className="homepage-article planet">
+                <img className="homepage-article-image planet" src={data[0].planet.image} alt="selected planet" />
+                <p>
+                    {data[0].planet.summary}
+                </p>
             </article>
             <article className="homepage-article star">
+                <img className="homepage-article-image star" src={data[0].planet.star.image} alt="selected planets star" />
                 <p>
-                    {data.length > 0 ? (
-                        data.map(star => (
-                            <li key={star.id}>
-                                {star.planet.name}
-                            </li>
-                        ))
-                    ) : (
-                        <p>No data found</p>
-                    )}
+                    {data[0].planet.star.summary}
                 </p>
-                <img className="homepage-article-image" />
             </article>
             <article className="homepage-article system">
+                <img className="homepage-article-image system" src={data[0].planet.star.starsystem.image} alt="selected planets system" />
                 <p>
-
+                    {data[0].planet.star.starsystem.summary}
                 </p>
-                <img className="homepage-article-image" />
             </article>
         </div>
     )

@@ -39,7 +39,7 @@ REST_FRAMEWORK = {
         "rest_framework.throttling.UserRateThrottle",
     ],
     "DEFAULT_THROTTLE_RATES": {
-        "user": "150/minute",
+        "user": "15000/minute",
     },
 }
 from datetime import timedelta

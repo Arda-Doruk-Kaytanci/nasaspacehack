@@ -11,18 +11,15 @@ class SystemCategory(models.Model):
 
 class SystemModel(models.Model):
     name = models.CharField(max_length=255)
+    image = models.ImageField(upload_to="Images/Systems/", null=True, blank=True)
+    summary = models.CharField(max_length=3000, null=True, blank=True)
     category = models.ForeignKey(
         SystemCategory, blank=True, null=True, on_delete=models.PROTECT
     )
+    url = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self) -> str:
         return self.name
-
-
-class SelectedItem(models.Model):
-
-    def __str__(self) -> str:
-        return self.planet
 
 
 class StarCategory(models.Model):
@@ -46,6 +43,8 @@ class StarItems(models.Model):
     image = models.ImageField(upload_to="Images/Stars/", null=True, blank=True)
     category = models.ForeignKey(StarCategory, on_delete=models.PROTECT, blank=True)
     starsystem = models.ForeignKey(SystemModel, on_delete=models.PROTECT, null=True)
+    summary = models.CharField(max_length=3000, null=True, blank=True)
+    url = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self) -> str:
         return self.name
@@ -56,6 +55,8 @@ class PlanetItems(models.Model):
     star = models.ForeignKey(StarItems, on_delete=models.PROTECT, blank=True)
     category = models.ForeignKey(PlanetCategory, on_delete=models.PROTECT, blank=True)
     image = models.ImageField(upload_to="Images/Planets/", null=True, blank=True)
+    summary = models.CharField(max_length=3000, null=True, blank=True)
+    url = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self) -> str:
         return self.name

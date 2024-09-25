@@ -1,8 +1,9 @@
-import React, { forwardRef, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import './CssFiles/Navbar.css';
+import Homepage from './Homepage';
 
-const NavBar = forwardRef((props, ref) => {
+function NavBar() {
     const location = useLocation();
     const isActive = (path) => location.pathname === path;
 
@@ -20,23 +21,21 @@ const NavBar = forwardRef((props, ref) => {
                 setScrollDir(direction);
             }
 
-            setIsVisible(direction === 'up' || scrollY <= 50);  
+            setIsVisible(direction === 'up' || scrollY <= 50);
 
-            lastScrollY = scrollY > 0 ? scrollY : 0;  
+            lastScrollY = scrollY > 0 ? scrollY : 0;
         };
 
         window.addEventListener('scroll', updateYDir);
         return () => window.removeEventListener('scroll', updateYDir);
     }, [scrollDir]);
-
     return (
         <>
             <div
                 className={`Nav ${isVisible ? 'show' : 'hide'}`}
-                ref={ref}
             >
                 <nav>
-                    <Link to="" className='link-nav' style={{ color: isActive('/') ? 'black' : 'grey', fontWeight: isActive('/') ? 'bold' : 'normal' }}>
+                    <Link to="/" className='link-nav' style={{ color: isActive('/') ? 'black' : 'grey', fontWeight: isActive('/') ? 'bold' : 'normal' }}>
                         Homepage
                     </Link>
                     <Link to="/tips" className='link-nav' id='tipsLink' style={{ color: isActive('/tips') ? 'black' : 'grey', fontWeight: isActive('/tips') ? 'bold' : 'normal' }}>
@@ -47,8 +46,11 @@ const NavBar = forwardRef((props, ref) => {
                     </Link>
                 </nav>
             </div>
+            <Routes>
+                <Route path="/" element={<Homepage />} />
+            </Routes>
         </>
     );
-});
+}
 
 export default NavBar;

@@ -16,22 +16,6 @@ class PlanetCategorySerializer(serializers.ModelSerializer):
         fields = ["title", "id"]
 
 
-class PlanetSerializer(serializers.ModelSerializer):
-    category_id = serializers.IntegerField(write_only=True)
-    category = PlanetCategorySerializer(read_only=True)
-
-    class Meta:
-        model = PlanetItems
-        fields = [
-            "name",
-            "image",
-            "category",
-            "id",
-            "category_id",
-            "star",
-        ]
-
-
 class StarCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = StarCategory
@@ -50,16 +34,45 @@ class SystemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PlanetItems
-        fields = ["name", "category", "id"]
+        fields = ["name", "category", "id", "category_id", "image", "summary", "url"]
 
 
 class StarSerializer(serializers.ModelSerializer):
     category_id = serializers.IntegerField(write_only=True)
     category = StarCategorySerializer(read_only=True)
+    starsystem = SystemSerializer(read_only=True)
 
     class Meta:
         model = StarItems
-        fields = ["name", "image", "category", "id", "category_id", "system"]
+        fields = [
+            "name",
+            "image",
+            "category",
+            "id",
+            "category_id",
+            "starsystem",
+            "summary",
+            "url",
+        ]
+
+
+class PlanetSerializer(serializers.ModelSerializer):
+    category_id = serializers.IntegerField(write_only=True)
+    category = PlanetCategorySerializer(read_only=True)
+    star = StarSerializer(read_only=True)
+
+    class Meta:
+        model = PlanetItems
+        fields = [
+            "name",
+            "image",
+            "category",
+            "id",
+            "category_id",
+            "star",
+            "summary",
+            "url",
+        ]
 
 
 class SelectedItemSerializer(serializers.ModelSerializer):
