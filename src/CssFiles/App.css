@@ -1,3 +1,6 @@
+*{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 html {
     background-image: url('/src/Images/backgroundDesktop.png');
     background-size: cover;

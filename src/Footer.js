@@ -41,7 +41,7 @@ function Footer() {
                         <ul id="footer-link">
                             Navigations
                             <li><LinkButton name="Homepage" link="" ></LinkButton></li>
-                            <li><LinkButton name="Tips" link="tips" ></LinkButton></li>
+                            <li><LinkButton name="Catalogue" link="catalogue" ></LinkButton></li>
                             <li><LinkButton name="Tests" link="tests"  ></LinkButton></li>
                             <li><button type="button" onClick={goUp} id="goUp" className="link" >Go Up</button></li>
                         </ul>
@@ -81,7 +81,7 @@ function Footer() {
                     <ul id="footer-link">
                         Navigations
                         <li><LinkButton name="Homepage" link="" ></LinkButton></li>
-                        <li><LinkButton name="Tips" link="tips" ></LinkButton></li>
+                        <li><LinkButton name="Catalogue" link="catalogue" ></LinkButton></li>
                         <li><LinkButton name="Tests" link="tests"  ></LinkButton></li>
                         <li><button type="button" onClick={goUp} id="goUp" className="link" >Go Up</button></li>
                     </ul>

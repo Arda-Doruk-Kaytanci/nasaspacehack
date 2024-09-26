@@ -1,6 +1,5 @@
 .contributers li:hover {
     transform: scale(1.05);
-    color: aqua;
 }
 
 .link:hover {
@@ -36,7 +35,6 @@
 
     .contributers li:hover {
         transform: scale(1.05);
-        color: aqua;
     }
 
     .link:hover {

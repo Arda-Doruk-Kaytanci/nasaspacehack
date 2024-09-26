@@ -1,0 +1,113 @@
+.all-catalogue {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.search-input {
+    text-align: center;
+    width: 15vw;
+    padding: 10px;
+    margin-right: 20px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: rgb(215, 212, 212);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:disabled {
+    background: none;
+
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.search-input::placeholder {
+    color: #888;
+}
+
+.search-input:focus {
+    border-color: #3b4045;
+    box-shadow: 4px 7px 11px rgba(5, 15, 100, 0.804);
+}
+
+.sort-button {
+    width: 15vw;
+    height: 5vh;
+    margin-top: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: rgb(215, 212, 212);
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sort-button:hover {
+    outline: none;
+    box-shadow: 4px 7px 11px rgba(5, 15, 100, 0.804);
+    border-color: #3b4045;
+}
+
+.category-identifier {
+    width: 100vw;
+    font-size: 1.7rem;
+    text-align: center;
+    text-decoration: underline;
+    color: rgb(61, 132, 203);
+    text-shadow: 2px 2px rgb(1, 56, 111);
+}
+
+.links-container {
+    position: relative;
+    left: 10vw;
+    display: grid;
+    width: 80vw;
+    grid-template-columns: 20vw 20vw 20vw;
+    grid-template-rows: 30vh;
+    column-gap: 10vw;
+    row-gap: 5vh;
+}
+
+.paginator-buttons-container {
+    display: flex;
+    justify-content: space-around;
+}
+.paginator-button{
+    width: 10vw;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    background-color: rgb(215, 212, 212);
+}
+.current-page-span {
+    font-size: 1.7rem;
+    color: rgb(61, 132, 203);
+    text-shadow: 2px 2px rgb(1, 56, 111);
+}
+
+.link-widget {
+    border: 2px solid #13a9ba;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+
+    text-align: center;
+    height: 30vh;
+    width: 20vw;
+    margin-bottom: 5vh;
+
+}
+.link-widget:hover {
+    transform: scale(1.05);
+  }
