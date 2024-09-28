@@ -1,0 +1,12 @@
+.error-page-container {
+    margin-top: 35vh;
+    font-size: 2rem;
+    color: rgb(252, 8, 8);
+    text-align: center;
+    margin-bottom: 35vh;
+}
+.error-page-container img{
+    margin-top: 7vh;
+    width: 20vw;
+    height: 25vh;
+}

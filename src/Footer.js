@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import logo from "./Images/nasaspacehacklogo.jpg"
 import './CssFiles/Footer.css'
@@ -42,7 +42,9 @@ function Footer() {
                             Navigations
                             <li><LinkButton name="Homepage" link="" ></LinkButton></li>
                             <li><LinkButton name="Catalogue" link="catalogue" ></LinkButton></li>
-                            <li><LinkButton name="Tests" link="tests"  ></LinkButton></li>
+                            <li><LinkButton name="Quiz" link="quiz"  ></LinkButton></li>
+                            <li><LinkButton name="Info" link="info"  ></LinkButton></li>
+                            <li><LinkButton name="Contributers" link="contributers"  ></LinkButton></li>
                             <li><button type="button" onClick={goUp} id="goUp" className="link" >Go Up</button></li>
                         </ul>
                         <ol className="contributers">Contributers
@@ -82,7 +84,9 @@ function Footer() {
                         Navigations
                         <li><LinkButton name="Homepage" link="" ></LinkButton></li>
                         <li><LinkButton name="Catalogue" link="catalogue" ></LinkButton></li>
-                        <li><LinkButton name="Tests" link="tests"  ></LinkButton></li>
+                        <li><LinkButton name="Quiz" link="quiz"  ></LinkButton></li>
+                        <li><LinkButton name="Info" link="info"  ></LinkButton></li>
+                        <li><LinkButton name="Contributers" link="contributers"  ></LinkButton></li>
                         <li><button type="button" onClick={goUp} id="goUp" className="link" >Go Up</button></li>
                     </ul>
                 </div>
