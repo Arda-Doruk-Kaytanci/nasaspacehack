@@ -111,6 +111,8 @@
     text-align: center;
     height: 30vh;
     width: 20vw;
+    word-break: break-all;
+    overflow: auto;
     margin-bottom: 2vh;
 }
 

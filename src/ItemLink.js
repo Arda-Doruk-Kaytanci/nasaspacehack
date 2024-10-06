@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function StarLink(props) {
+function ItemLink(props) {
     return (
-        <Link to={`/stars/${props.name.toLowerCase().replace(/ /g, "-")}`} >
+        <Link to={`/${props.category}/${props.name.replace(/I/g, "i").toLowerCase().replace(/ /g, "-")}`}>
             <div className="link-widget">
                 <img src={props.image} alt={props.name} className="link-image" />
                 <h3 className="link-name">{props.name}</h3>
@@ -12,4 +12,4 @@ function StarLink(props) {
     );
 }
 
-export default StarLink;
+export default ItemLink;

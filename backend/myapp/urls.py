@@ -7,6 +7,7 @@ from .views import (
     StarSingleItem,
     StarCategoryView,
     SelectedItemView,
+    SystemView
 )
 
 urlpatterns = [
@@ -17,11 +18,7 @@ urlpatterns = [
     ),
     path(
         "systems/",
-        PlanetsView.as_view(),
-    ),
-    path(
-        "systems/<int:pk>/",
-        PlanetSingleItem.as_view(),
+        SystemView.as_view(),
     ),
     path(
         "selected-item/",

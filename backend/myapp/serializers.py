@@ -33,8 +33,20 @@ class SystemSerializer(serializers.ModelSerializer):
     category = SystemCategorySerializer(read_only=True)
 
     class Meta:
-        model = PlanetItems
-        fields = ["name", "category", "id", "category_id", "image", "summary", "url"]
+        model = SystemModel
+        fields = [
+            "name",
+            "category",
+            "id",
+            "category_id",
+            "image",
+            "summary",
+            "url",
+            "planetary",
+            "orbit",
+            "gravity",
+            "habitability",
+        ]
 
 
 class StarSerializer(serializers.ModelSerializer):
@@ -53,6 +65,14 @@ class StarSerializer(serializers.ModelSerializer):
             "starsystem",
             "summary",
             "url",
+            "type",
+            "temp",
+            "radius",
+            "metal",
+            "mass",
+            "age",
+            "magnetic",
+            "lumi",
         ]
 
 
@@ -72,6 +92,15 @@ class PlanetSerializer(serializers.ModelSerializer):
             "star",
             "summary",
             "url",
+            "transit",
+            "classification",
+            "mass",
+            "radius",
+            "atmos",
+            "orbit",
+            "gravity",
+            "conditions",
+            "magnetic",
         ]
 
 

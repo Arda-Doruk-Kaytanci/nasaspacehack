@@ -1,0 +1,50 @@
+.info-container2 {
+    color: white;
+    margin: 20px 0;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(148, 137, 137, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    margin-top: 10vh;
+    
+}
+.linkscontainerpage{
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.info-container2 h1 {
+    color: rgb(138, 195, 197);
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 5px;
+}
+
+.info-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.characteristics {
+    margin-top: 20px;
+}
+
+.characteristics summary {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.characteristics details {
+    font-size: 1em;
+    color: white;
+    margin-left: 20px;
+}
+
+.characteristics strong {
+    color: #007bff;
+}
+

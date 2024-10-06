@@ -5,6 +5,13 @@ import ErrorPage from "./ErrorPage"
 import kepler from "./Images/kepler.png"
 import cheops from "./Images/cheops.png"
 import webb from "./Images/james-webb.png"
+import earth1 from "./Images/earth2.png"
+import earth2 from "./Images/earth1.png"
+import star1 from "./Images/star1.png"
+import star2 from "./Images/star2.png"
+import lava1 from "./Images/lava1.png"
+import lava2 from "./Images/lava2.png"
+import cotton from "./Images/cotton-candy.png"
 
 function Homepage() {
     const [error, setError] = useState(null);
@@ -117,40 +124,40 @@ function Homepage() {
             <div className="homepage-showcase-container">
                 <section className="homepage-section liveable">
                     <div className="homepage-section-div">
-                        <img src={kepler} className="homepage-section-div-image"></img>
-                        <p className="homepage-div-p">{data[0].planet.summary}</p>
+                        <img src={earth1} className="homepage-section-div-image"></img>
+                        <p className="homepage-div-p">Kepler-442b is a rocky planet residing in the habitable zone of its star, where conditions may support liquid water. The planet is slightly larger than Earth, with a radius of about 1.34 times that of our planet. Its star is a K-type star, cooler and smaller than our Sun, which provides a stable environment suitable for potentially sustaining life.</p>
                     </div>
                     <div className="homepage-section-div">
-                        <img src={kepler} className="homepage-section-div-image"></img>
-                        <p className="homepage-div-p">{data[0].planet.summary}</p>
+                        <img src={earth2} className="homepage-section-div-image"></img>
+                        <p className="homepage-div-p">Proxima Centauri b is an Earth-sized exoplanet within the habitable zone of its star. The planet could potentially have liquid water on its surface. However, Proxima Centauri is a red dwarf star known for its stellar flares, which could impact the planet's atmosphere and potential habitability.</p>
                     </div>
                 </section>
                 <section className="homepage-section multiple-star">
                     <div className="homepage-section-div">
-                        <img src={kepler} className="homepage-section-div-image"></img>
-                        <p className="homepage-div-p">{data[0].planet.summary}</p>
+                        <img src={star1} className="homepage-section-div-image"></img>
+                        <p className="homepage-div-p"> Kepler-16b orbits around a pair of stars, one smaller and cooler than the other. The planet has a Saturn-like composition and size, making it a gas giant. It experiences double sunsets due to its dual-star system, reminiscent of Tatooine from "Star Wars."</p>
                     </div>
                     <div className="homepage-section-div">
-                        <img src={kepler} className="homepage-section-div-image"></img>
-                        <p className="homepage-div-p">{data[0].planet.summary}</p>
+                        <img src={star2} className="homepage-section-div-image"></img>
+                        <p className="homepage-div-p">This planet orbits within a system with two stars—a binary system with one Sun-like star and a smaller red dwarf. Kepler-47c is a gas giant, similar in size to Neptune, with a likely thick atmosphere. The dual-star system creates complex light patterns on the planet's surface, potentially impacting its atmospheric dynamics.</p>
                     </div>
                 </section>
                 <section className="homepage-section lava">
                     <div className="homepage-section-div">
-                        <img src={kepler} className="homepage-section-div-image"></img>
-                        <p className="homepage-div-p">{data[0].planet.summary}</p>
+                        <img src={lava1} className="homepage-section-div-image"></img>
+                        <p className="homepage-div-p">55 Cancri e is known as a "lava planet" due to its extremely close proximity to its host star, resulting in surface temperatures high enough to melt rock. This proximity gives the planet a molten surface and possibly a partially vaporized atmosphere consisting of rock vapor and heavy metals.</p>
                     </div>
                     <div className="homepage-section-div">
-                        <img src={kepler} className="homepage-section-div-image"></img>
-                        <p className="homepage-div-p">{data[0].planet.summary}</p>
+                        <img src={lava2} className="homepage-section-div-image"></img>
+                        <p className="homepage-div-p">K2-141b is another extreme lava planet, tidally locked to its star, with one side perpetually facing the scorching heat. Its surface is believed to have oceans of molten lava, while the atmosphere is composed of vaporized rock that circulates between the hot and cold sides of the planet.</p>
                     </div>
                 </section>
             </div>
 
             <section className="cotton-candy">
                 <div className="homepage-section-div cotton-candy">
-                    <img src={kepler} className="homepage-section-div-image"></img>
-                    <p className="homepage-div-p">{data[0].planet.summary}</p>
+                    <img src={cotton} className="homepage-section-div-image"></img>
+                    <p className="homepage-div-p">K2-141b is another extreme lava planet, tidally locked to its star, with one side perpetually facing the scorching heat. Its surface is believed to have oceans of molten lava, while the atmosphere is composed of vaporized rock that circulates between the hot and cold sides of the planet.</p>
                 </div>
             </section>
 

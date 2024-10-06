@@ -6,7 +6,6 @@ from .models import (
     PlanetItems,
     SelectedItem,
     SystemCategory,
-    UrlModel,
     SystemModel,
 )
 
@@ -30,10 +29,9 @@ class SystemAdmin(admin.ModelAdmin):
 
 
 admin.site.register(StarCategory)
-admin.site.register(StarItems, StarItemsAdmin)
+admin.site.register(StarItems)
 admin.site.register(PlanetCategory)
-admin.site.register(PlanetItems, PlanetItemsAdmin)
+admin.site.register(PlanetItems)
 admin.site.register(SelectedItem)
-admin.site.register(SystemModel, SystemAdmin)
+admin.site.register(SystemModel)
 admin.site.register(SystemCategory)
-admin.site.register(UrlModel)

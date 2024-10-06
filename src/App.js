@@ -9,7 +9,6 @@ function App() {
   const location = useLocation()
   useEffect(() => {
     topRef.current.scrollIntoView({ behavior: "smooth" });
-
   }, [location])
   const topRef = useRef(null);
   return (

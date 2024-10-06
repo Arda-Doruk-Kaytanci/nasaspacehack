@@ -1,21 +1,48 @@
 import React from 'react';
-import './Info.css';
-import trappist1SystemImage from '../images/trappist1_system.jpg';
+import './CssFiles/System.css';
+import ItemLink from './ItemLink';
 
-const StarSystem = () => {
+const System = (props) => {
     return (
-        <div className="info-container">
-            <h1>Star System: TRAPPIST-1 System</h1>
-            <img src={trappist1SystemImage} alt="TRAPPIST-1 System" className="info-image" />
-            <h2>System Characteristics</h2>
-            <ul>
-                <li><strong>Planetary Composition:</strong> The system contains seven known Earth-sized planets (TRAPPIST-1b to TRAPPIST-1h).</li>
-                <li><strong>Orbital Resonance:</strong> The planets are in a complex orbital resonance pattern...</li>
-                <li><strong>Gravitational Influence:</strong> TRAPPIST-1’s low mass allows its planets to orbit closely...</li>
-                <li><strong>Habitability Impact:</strong> TRAPPIST-1e's location in the star’s habitable zone means it could theoretically support liquid water...</li>
-            </ul>
+        <div className="info-container2">
+            <h1>Name: {props.item.star?.starsystem?.name || 'Unknown System'}</h1>
+            <img
+                src={props.item.star?.starsystem?.image || 'default-image.jpg'}
+                alt={props.item.star?.starsystem?.name || 'Unknown'}
+                className="info-image"
+            />
+            <h2>Characteristics</h2>
+            <summary>
+                <strong>Planetary:</strong>
+                <details>{props.item.star?.starsystem?.planetary || 'N/A'}</details>
+            </summary>
+            <summary>
+                <strong>Orbit:</strong>
+                <details>{props.item.star?.starsystem?.orbit || 'N/A'}</details>
+            </summary>
+            <summary>
+                <strong>Gravity:</strong>
+                <details>{props.item.star?.starsystem?.gravity || 'N/A'}</details>
+            </summary>
+            <summary>
+                <strong>Habitability:</strong>
+                <details>{props.item.star?.starsystem?.habitability || 'N/A'}</details>
+            </summary>
+            <div className='linkscontainerpage'>
+                <ItemLink
+                    category="stars"
+                    name={props.item.star?.name || 'Unknown Star'}
+                    image={props.item.star?.image || 'default-image.jpg'}
+                />
+                <ItemLink
+                    category="planets"
+                    name={props.item.name || 'Unknown Planet'}
+                    image={props.item.image || 'default-image.jpg'}
+                />
+            </div>
+
         </div>
     );
 };
 
-export default StarSystem;
+export default System;

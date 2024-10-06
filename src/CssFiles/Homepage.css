@@ -20,7 +20,7 @@
 
 .homepage-article-p.left {
     position: relative;
-    left: 30vw;
+    z-index: -1;
     text-align: center;
     margin-top: 3vh;
     margin-bottom: 3vh;
@@ -32,7 +32,7 @@
     border-top: 2px solid beige;
     border-bottom: 2px solid beige;
     border-right: 2px solid beige;
-    width: 66vw;
+    width: 96vw;
 }
 
 .homepage-article-p.right {
@@ -100,6 +100,7 @@
     text-align: center;
     background: rgb(148, 137, 137, 0.25);
 }
+
 .homepage-article-image.star {
     float: right;
     margin-right: 2vw;
@@ -156,10 +157,12 @@
 .mission-header {
     font-size: 1.8rem;
 }
-.homepage-div-p{
+
+.homepage-div-p {
     margin-left: 1vw;
     margin-right: 1vw;
 }
+
 .mission-image {
     width: 35vw;
     min-width: 250px;

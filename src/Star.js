@@ -1,24 +1,28 @@
-// src/components/Star.js
 import React from 'react';
-import './Info.css';
-import trappist1Image from '../images/trappist1.jpg';
-
-const Star = () => {
+import ItemLink from "./ItemLink"
+import "./CssFiles/Star.css"
+const Star = (props) => {
     return (
-        <div className="info-container">
-            <h1>Host Star: TRAPPIST-1</h1>
-            <img src={trappist1Image} alt="TRAPPIST-1" className="info-image" />
-            <h2>Star Characteristics</h2>
-            <ul>
-                <li><strong>Star Type:</strong> Ultra-cool red dwarf (M8V).</li>
-                <li><strong>Mass:</strong> Approximately 0.089 times the mass of the Sun.</li>
-                <li><strong>Radius:</strong> About 0.12 times that of the Sun.</li>
-                <li><strong>Temperature:</strong> Approximately 2,511 K, significantly cooler than our Sun.</li>
-                <li><strong>Luminosity:</strong> Roughly 0.00052 times that of the Sun.</li>
-                <li><strong>Age:</strong> Estimated to be between 5.4 and 9.8 billion years...</li>
-                <li><strong>Metallicity:</strong> Near solar metallicity with [Fe/H] ≈ 0.04...</li>
-                <li><strong>Magnetic Field:</strong> TRAPPIST-1 has a strong magnetic field typical of red dwarfs...</li>
-            </ul>
+        <div className="info-container2">
+            <h1>Name: {props.item.star.name}</h1>
+            <img src={props.item.star.image} alt={props.item.star.name} className="info-image" />
+            <div className="characteristics">
+                <h2>Characteristics</h2>
+                <summary><strong>Type:</strong> <details>{props.item.star.type}</details></summary>
+                <summary><strong>Mass:</strong> <details>{props.item.star.mass}</details></summary>
+                <summary><strong>Radius:</strong> <details>{props.item.star.radius}</details></summary>
+                <summary><strong>Temperature:</strong> <details>{props.item.star.temp}</details></summary>
+                <summary><strong>Luminosity:</strong> <details>{props.item.star.lumi}</details></summary>
+                <summary><strong>Age:</strong> <details>{props.item.star.age}</details></summary>
+                <summary><strong>Metallicity:</strong> <details>{props.item.star.metal}</details></summary>
+                <summary><strong>Magnetic Field:</strong> <details>{props.item.star.magnetic}</details></summary>
+            </div>
+            <div className='linkscontainerpage'>
+                <ItemLink category="planets" name={props.item.name} image={props.item.image}></ItemLink>
+                <ItemLink category="systems" name={props.item.star.starsystem.name} image={props.item.star.starsystem.image}></ItemLink>
+            </div>
+
+
         </div>
     );
 };
