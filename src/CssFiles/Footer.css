@@ -42,6 +42,7 @@
     }
 
     .footer-container {
+        margin-top: 10vh;
         display: grid;
         height: 50vh;
         grid-template-columns: 33.33vw 33.33vw 33.33vw;
@@ -81,6 +82,7 @@
         background: none;
         border-radius: 15%;
         box-shadow: 1px 1px 2px 2px;
+        overflow: auto;
     }
 
     #goUp {
@@ -101,6 +103,7 @@
 
 @media screen and (max-width: 500px) {
     .footer-container {
+        margin-top: 10vh;
         font-size: 1.5rem;
         font-weight: 700;
     }
@@ -172,10 +175,12 @@
     .link {
         font-size: 1.2rem;
         width: 30svw;
-        padding: 15px;
+        height: 5vh;
+        text-align: center;
         background: none;
         border-radius: 15%;
         box-shadow: 1px 1px 2px 2px;
+        overflow: auto;
     }
 
     #goUp {

@@ -6,6 +6,8 @@ import AllCatalogue from './AllCatalogue';
 import ErrorPage from './ErrorPage';
 import LoadingDataPage from './LoadingDataPage';
 import Contributers from './Contributers';
+import Quiz from "./Quiz";
+import Info from './Info';
 
 function NavBar() {
     const location = useLocation();
@@ -45,23 +47,22 @@ function NavBar() {
                     <Link to="/catalogue" className='nav-link' style={{ color: isActive('/catalogue') ? 'rgb(29, 135, 241)' : 'white', fontWeight: isActive('/catalogue') ? 'bold' : 'normal', }}>
                         Catalogue
                     </Link>
-                    <Link to="/quiz" id='quiz-link' className='nav-link' style={{ color: isActive('/quiz') ? 'rgb(29, 135, 241)' : 'white', fontWeight: isActive('/quiz') ? 'bold' : 'normal', }}>
-                        Quiz
+                    <Link to="/create-your-planet" className='nav-link' style={{ color: isActive('/create-your-planet') ? 'rgb(29, 135, 241)' : 'white', fontWeight: isActive('/create-your-planet') ? 'bold' : 'normal', }}>
+                        Create Your Planet
                     </Link>
-                    <Link to="/Info" id='quiz-link' className='nav-link' style={{ color: isActive('/Info') ? 'rgb(29, 135, 241)' : 'white', fontWeight: isActive('/Info') ? 'bold' : 'normal', }}>
+                    <Link to="/Info" className='nav-link' style={{ color: isActive('/Info') ? 'rgb(29, 135, 241)' : 'white', fontWeight: isActive('/Info') ? 'bold' : 'normal', }}>
                         Info
                     </Link>
-                    <Link to="/contributers" id='quiz-link' className='nav-link' style={{ color: isActive('/contributers') ? 'rgb(29, 135, 241)' : 'white', fontWeight: isActive('/contributers') ? 'bold' : 'normal', }}>
+                    <Link to="/contributers" className='nav-link' style={{ color: isActive('/contributers') ? 'rgb(29, 135, 241)' : 'white', fontWeight: isActive('/contributers') ? 'bold' : 'normal', }}>
                         Contributers
                     </Link>
-
                 </nav>
             </div>
             <Routes>
                 <Route path="/" element={<Homepage />} />
                 <Route path='/catalogue' element={<AllCatalogue />} />
-                <Route path='/quiz' element={<ErrorPage />} />
-                <Route path='/info' element={<AllCatalogue />} />
+                <Route path='/create-your-planet' element={<Quiz />} />
+                <Route path='/info' element={<Info />} />
                 <Route path='/contributers' element={<Contributers />} />
                 <Route path='/error' element={<ErrorPage />} />
                 <Route path='/loading' element={<LoadingDataPage />} />

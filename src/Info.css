@@ -1,0 +1,41 @@
+/* src/components/Info.css */
+.info-container {
+    margin-top: 10vh;
+    padding: 20px;
+}
+
+.section {
+    color: white;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: rgb(148, 137, 137, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: rgb(138, 195, 197);
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 5px;
+}
+
+.interactive-diagram {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px dashed #ccc;
+    text-align: center;
+    background-color: rgba(104, 100, 100, 0.25);
+}
+
+.interactive-diagram select {
+    margin-top: 20px;
+    min-width: 125px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: rgb(215, 212, 212);
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}

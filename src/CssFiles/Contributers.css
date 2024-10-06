@@ -1,0 +1,19 @@
+.contributers-page-container {
+    position: relative;
+    width: 50vw;
+    left: 25vw;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-items: center;
+    margin-bottom: 10vh;
+    color: white;
+}
+
+.cont-image {
+    border: 3px solid beige;
+    border-radius: 50%;
+    width: 30vw;
+    height: 40vh;
+}

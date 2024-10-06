@@ -65,13 +65,13 @@
     font-size: 1.7rem;
     text-align: center;
     text-decoration: underline;
-    color: rgb(61, 132, 203);
+    color: white;
     text-shadow: 2px 2px rgb(1, 56, 111);
 }
 
-.links-container {
+.links-container.full-width {
     position: relative;
-    left: 10vw;
+    left: 5vw;
     display: grid;
     width: 80vw;
     grid-template-columns: 20vw 20vw 20vw;
@@ -97,14 +97,14 @@
 
 .current-page-span {
     font-size: 1.7rem;
-    color: rgb(61, 132, 203);
+    color: rgb(255, 255, 255);
     text-shadow: 2px 2px rgb(1, 56, 111);
 }
 
 .link-widget {
-    border: 4px solid #276066;
+    border: 4px solid beige;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background: rgb(148, 137, 137, 0.25);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     font-size: 1.5rem;
@@ -114,8 +114,25 @@
     margin-bottom: 2vh;
 }
 
+.link-name::-webkit-scrollbar-track {
+    background: rgb(148, 137, 137, 0.8);
+    border-radius: 10px;
+}
+
+.link-name::-webkit-scrollbar {
+    width: 20vw;
+    height: 12px;
+}
+
 .link-widget:hover {
     transform: scale(1.05);
+}
+
+.link-name::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: #4f4747;
+    border-radius: 10px;
+    border: 3px solid beige;
 }
 
 .link-image {
@@ -131,23 +148,17 @@
     position: relative;
     bottom: 3vh;
     overflow: auto;
-    color: #3b4045;
+    color: white;
     font-weight: 500;
 }
 
-.all-catalogue.full-screen-compare {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
 .split-view-container {
+    position: relative;
+    left: 5vw;
     display: grid;
     width: 90vw;
-    grid-template-columns: 25vw 20vw 25vw;
-    column-gap: 10vw;
+    grid-template-columns: 20vw 42.5vw 20vw;
+    column-gap: 3.75vw;
 }
 
 .compare-view-left {
@@ -155,34 +166,38 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 20px;
-    background-color: #f4f4f4;
+    width: 20vw;
 }
 
 .compare-view-right {
-    position: relative;
-    right: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 20px;
-    background-color: #f4f4f4;
+    width: 20vw;
+    border-radius: 8px;
 }
 
 .compare-item {
-    flex: 1;
-    margin: 10px;
-    padding: 20px;
+    width: 20vw;
+    overflow: auto;
+    word-break: break-all;
     border: 1px solid #ccc;
-    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    color: white;
+    background-color: rgb(148, 137, 137, 0.25);
+}
+.compare-item * {
+    text-align: center;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
 
 .clear-compare-button {
     margin-top: 20px;
     padding: 10px 20px;
+    border-radius: 8px;
     background-color: #ff4d4d;
     color: white;
     border: none;
@@ -190,9 +205,12 @@
 }
 
 .links-container.half-width {
-    width: 50%;
-    grid-template-columns: 20vw;
-    column-gap: 0;
+    position: relative;
+    left: 0;
+    display: grid;
+    width: 42.5vw;
+    grid-template-columns: 20vw 20vw;
+    column-gap: 2.5vw;
 }
 
 .item-container {
@@ -209,15 +227,60 @@
 }
 
 @media screen and (max-width: 500px) {
-    .links-container {
+    .split-view-container {
         position: relative;
         left: 10vw;
+        display: grid;
+        width: 80vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "item-1"
+            "item-2"
+            "links";
+        justify-items: center;
+    }
+
+    .compare-view-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 20vw;
+        height: fit-content;
+        background-color: #888;
+        grid-area: item-1;
+    }
+
+    .compare-view-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 20vw;
+        background-color: #f9f9f9;
+        grid-area: item-2;
+    }
+
+    .links-container.full-width {
+        position: relative;
+        left: 0;
         display: grid;
         width: 80vw;
         grid-template-columns: 35vw 35vw;
         grid-template-rows: 30vh;
         column-gap: 10vw;
         row-gap: 10vh;
+    }
+
+    .links-container.half-width {
+        display: grid;
+        width: 80vw;
+        grid-template-columns: 35vw 35vw;
+        grid-template-rows: 30vh;
+        column-gap: 10vw;
+        row-gap: 10vh;
+        grid-area: links;
     }
 
     .link-widget {
@@ -232,4 +295,5 @@
         width: 35vw;
         margin-bottom: 5vh;
     }
+
 }

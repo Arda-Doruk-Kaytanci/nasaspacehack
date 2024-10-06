@@ -42,14 +42,14 @@ function Footer() {
                             Navigations
                             <li><LinkButton name="Homepage" link="" ></LinkButton></li>
                             <li><LinkButton name="Catalogue" link="catalogue" ></LinkButton></li>
-                            <li><LinkButton name="Quiz" link="quiz"  ></LinkButton></li>
+                            <li><LinkButton name="Create Your Planet" link="create-your-planet"  ></LinkButton></li>
                             <li><LinkButton name="Info" link="info"  ></LinkButton></li>
                             <li><LinkButton name="Contributers" link="contributers"  ></LinkButton></li>
                             <li><button type="button" onClick={goUp} id="goUp" className="link" >Go Up</button></li>
                         </ul>
                         <ol className="contributers">Contributers
                             <li>
-                                Arda Doruk Kaytancı
+                                Arda Doruk Kaytanci
                             </li>
                             <li>
                                 Alper Bülent Evren
@@ -58,10 +58,10 @@ function Footer() {
                                 Arda Yazgan
                             </li>
                             <li>
-                                Hacı Hasan Ocak
+                                Haci Hasan Ocak
                             </li>
                             <li>
-                                Furkan Kürtoğlu
+                                Furkan Karatas
                             </li>
                         </ol>
                     </div>
@@ -84,7 +84,7 @@ function Footer() {
                         Navigations
                         <li><LinkButton name="Homepage" link="" ></LinkButton></li>
                         <li><LinkButton name="Catalogue" link="catalogue" ></LinkButton></li>
-                        <li><LinkButton name="Quiz" link="quiz"  ></LinkButton></li>
+                        <li><LinkButton name="Create Your Planet" link="create-your-planet"></LinkButton></li>
                         <li><LinkButton name="Info" link="info"  ></LinkButton></li>
                         <li><LinkButton name="Contributers" link="contributers"  ></LinkButton></li>
                         <li><button type="button" onClick={goUp} id="goUp" className="link" >Go Up</button></li>
@@ -105,7 +105,7 @@ function Footer() {
                 <div className="footer-grid-container">
                     <ol className="contributers">Contributers
                         <li>
-                            Arda Doruk Kaytancı
+                            Arda Doruk Kaytanci
                         </li>
                         <li>
                             Alper Bülent Evren
@@ -114,10 +114,10 @@ function Footer() {
                             Arda Yazgan
                         </li>
                         <li>
-                            Hacı Hasan Ocak
+                            Haci Hasan Ocak
                         </li>
                         <li>
-                            Furkan Kürtoğlu
+                            Furkan Karatas
                         </li>
                     </ol>
                 </div>

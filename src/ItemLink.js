@@ -5,7 +5,7 @@ function StarLink(props) {
     return (
         <Link to={`/stars/${props.name.toLowerCase().replace(/ /g, "-")}`} >
             <div className="link-widget">
-                <img src={props.image}  className="link-image" />
+                <img src={props.image} alt={props.name} className="link-image" />
                 <h3 className="link-name">{props.name}</h3>
             </div>
         </Link>

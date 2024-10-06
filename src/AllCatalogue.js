@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import ErrorPage from './ErrorPage';
 import LoadingDataPage from './LoadingDataPage';
 import './CssFiles/AllCatalogue.css';
-import StarLink from './StarLink';
+import ItemLink from './ItemLink';
+import PlanetLink from './PlanetLink';
+import SystemLink from './SystemLink';
 
 const AllCatalogue = () => {
     const [tempSearchTerm, setTempSearchTerm] = useState('');
@@ -110,12 +112,15 @@ const AllCatalogue = () => {
     }, [selectedCategory, currentPage, searchTerm]);
 
     const getFilteredData = () => {
-        if (!selectedCategory) return [];
+        if (!selectedCategory || !data[selectedCategory]) return [];
+
         const categoryData = data[selectedCategory];
+
         return categoryData.filter(item =>
-            item.name.toLowerCase().includes(searchTerm.toLowerCase())
+            item.name && item.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
     };
+
 
     const handleCompareClick = (item) => {
         if (!compareItem) {
@@ -150,7 +155,7 @@ const AllCatalogue = () => {
     if (error) return <ErrorPage error={error} />;
 
     return (
-        <div className={`all-catalogue ${compareItem && compareItem2 ? 'full-screen-compare' : ''}`}>
+        <div className="all-catalogue">
             <div className='search-container'>
                 <input
                     type="text"
@@ -169,6 +174,7 @@ const AllCatalogue = () => {
                         setTempSearchTerm('');
                         setSearchTerm('');
                         setData({ stars: [], planets: [], systems: [] });
+                        console.log(compareItem)
                     }}
                     className='sort-button'
                 >
@@ -185,40 +191,89 @@ const AllCatalogue = () => {
 
             <div className='split-view-container'>
                 {(compareItem || compareItem2) && (
-                    <div className='compare-view-right'>
+                    <div className='compare-view-left'>
                         {compareItem && (
                             <div className='compare-item'>
-                                <h3>{compareItem.name}</h3>
+                                {selectedCategory === "stars" ? (
+                                    <>
+                                        <h2>{compareItem.name}</h2>
+                                        <h3>{compareItem.star.name}</h3>
+                                    </>
+                                ) : selectedCategory === "systems" ? (
+                                    <>
+                                        <h2>{compareItem.star.starsystem.name}</h2>
+                                        <h3>{compareItem.star.name}</h3>
+                                        <h4>{compareItem.name}</h4>
+                                    </>
+                                ) : selectedCategory === "planets" ? (
+                                    <>
+                                        <h2>{compareItem.name}</h2>
+                                        <h3>{compareItem.star.name}</h3>
+                                        <h4>{compareItem.star.starsystem.name}</h4>
+                                    </>
+                                ) : null}
                             </div>
                         )}
 
                         <button onClick={handleClearComparison} className='clear-compare-button'>Close</button>
                     </div>
                 )}
-                <div className={`links-container ${compareItem ? 'half-width' : ''}`}>
-                    {getFilteredData().map(item => (
-                        <div key={item.id} className='item-container'>
-                            <StarLink name={item.name} image={item.image} />
-                            <button onClick={() => handleCompareClick(item)}>Compare</button>
-                        </div>
-                    ))}
+
+                <div className={`links-container ${compareItem ? 'half-width' : 'full-width'}`}>
+                    {getFilteredData().map(item =>
+                        selectedCategory === "stars" ? (
+                            <div key={item.id} className='item-container'>
+                                <ItemLink name={item.name} image={item.image} />
+                                <button onClick={() => handleCompareClick(item)}>Compare</button>
+                            </div>
+                        ) : selectedCategory === "systems" ? (
+                            <div key={item.id} className='system-container'>
+                                <SystemLink name={item.star.starsystem.name} image={item.star.starsystem.image} />
+                                <button onClick={() => handleCompareClick(item)}>Compare</button>
+                            </div>
+                        ) : selectedCategory === "planets" ? (
+                            <div key={item.id} className='system-container'>
+                                <PlanetLink name={item.name} image={item.image} />
+                                <button onClick={() => handleCompareClick(item)}>Compare</button>
+                            </div>
+                        ) : null
+                    )}
                 </div>
-                {(compareItem || compareItem2) && (
+                {(compareItem || compareItem2) && compareItem2 && (
                     <div className='compare-view-right'>
                         {compareItem2 && (
                             <div className='compare-item'>
-                                <h3>{compareItem2.name}</h3>
+                                {selectedCategory === "stars" ? (
+                                    <>
+                                        <h2>{compareItem2.name}</h2>
+                                        <h3>{compareItem2.star.name}</h3>
+                                    </>
+                                ) : selectedCategory === "systems" ? (
+                                    <>
+                                        <h2>{compareItem2.star.starsystem.name}</h2>
+                                        <h3>{compareItem2.star.name}</h3>
+                                        <h4>{compareItem2.name}</h4>
+                                    </>
+                                ) : selectedCategory === "planets" ? (
+                                    <>
+                                        <h2>{compareItem2.name}</h2>
+                                        <h3>{compareItem2.star.name}</h3>
+                                        <h4>{compareItem2.star.starsystem.name}</h4>
+                                    </>
+                                ) : null}
                             </div>
                         )}
+                        <button onClick={handleClearComparison} className='clear-compare-button'>Close</button>
                     </div>
                 )}
+
             </div>
             {selectedCategory && !searchTerm && (
                 <div className='paginator-buttons-container'>
                     <button onClick={goToPreviousPage} disabled={!previousPage} className='paginator-button'>
                         Previous
                     </button>
-                    <span className='current-page-span'> Page {currentPage} </span>
+                    <span className=' -page-span'> Page {currentPage} </span>
                     <button onClick={goToNextPage} disabled={!nextPage} className='paginator-button'>
                         Next
                     </button>
